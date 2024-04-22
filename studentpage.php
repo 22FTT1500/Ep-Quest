@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['name'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
 ?>
 
     <!DOCTYPE html>
@@ -14,7 +14,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['name'])) {
     </head>
 
     <body>
-        <h1>Welcome <?php echo $_SESSION['name']; ?></h1>
+        <h1>Welcome <?php echo $_SESSION['student_id']; ?></h1>
         <a href="logout.php">Logout</a>
     </body>
 
