@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +21,13 @@
         </div>
         <form class="space-y-6">
             <div class="relative">
-                <input type="text" placeholder="22ft1499" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
+                <input type="text" placeholder="Student ID" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
                 <span class="absolute left-3 top-2 text-zinc-500">
                     <!-- <img src="https://placehold.co/20x20" alt="Logo" class="mb-2"> -->
                 </span>
             </div>
             <div class="relative">
-                <input type="password" placeholder="********" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
+                <input type="password" placeholder="Password" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
                 <span class="absolute left-3 top-2 text-zinc-500">
                     <!-- <img src="https://placehold.co/20x20" alt="Logo" class="mb-2"> -->
                 </span>
