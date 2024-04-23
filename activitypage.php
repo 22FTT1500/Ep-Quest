@@ -56,8 +56,8 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
                     <span><a href="studentpage.php">Home</a></span>
-                    <span><a href="activitypage.php">Activity</a></span>
-                    <span><a href="">Scores</a></span>
+                    <span><a href="#">Activity</a></span>
+                    <span><a href="leaderboard.php">Scores</a></span>
                     <span><a href="">Profile</a></span>
                 </div>
             </div>

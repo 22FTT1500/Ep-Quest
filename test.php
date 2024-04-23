@@ -9,36 +9,88 @@
 </head>
 
 <body class="bg-zinc-900 text-white font-sans">
-    <div class="max-w-3xl mx-auto">
-
-        <div class="flex items-center space-x-2 p-4 bg-white dark:bg-zinc-800 shadow-md rounded-lg">
-            <input type="text" placeholder="Search Clubs or Events..." class="flex-grow p-2 border border-zinc-300 dark:border-zinc-700 rounded-lg focus:outline-none dark:text-white">
-            <button class="p-2 bg-blue-500 dark:bg-blue-700 text-white dark:text-white rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0zM21 21l-4.35-4.35"></path>
-                </svg>
-            </button>
-        </div>
-
-        <div class="mt-4 space-y-4">
-
-            <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                <img src="https://placehold.co/600x300" alt="Handball Club" class="w-full h-48 sm:h-64 object-cover">
-                <div class="p-4">
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-lg font-semibold dark:text-white">Handball Club</h2>
-                        <span class="bg-green-500 text-white dark:text-white py-1 px-3 rounded-full text-xs">3K</span>
+    <div class="bg-blue-500 min-h-screen p-4">
+        <div class="bg-white rounded-lg p-4 shadow-md">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40" alt="User" class="rounded-full" crossorigin="anonymous">
+                    <div class="ml-2">
+                        <p class="font-semibold">Lala</p>
+                        <p class="text-xs text-zinc-500">22ftt1414@student.pb.edu.bn</p>
                     </div>
                 </div>
+                <button class="bg-blue-200 p-2 rounded-full">
+                    <img src="https://placehold.co/24x24" alt="Notification" crossorigin="anonymous">
+                </button>
             </div>
-
-            <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                <img src="https://placehold.co/600x300" alt="Esport Convo Event" class="w-full h-48 sm:h-64 object-cover">
-                <div class="p-4">
-                    <h2 class="text-lg font-semibold dark:text-white">Esport Convo Event</h2>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">13-15 Oct 2023</p>
+            <h2 class="text-center text-2xl font-bold mb-4">Leaderboard</h2>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">1</span>
+                        <img src="https://placehold.co/40x40" alt="User" class="rounded-full" crossorigin="anonymous">
+                        <div class="ml-2">
+                            <p class="font-semibold">Lala</p>
+                            <p class="text-xs text-zinc-500">22ftt1414</p>
+                        </div>
+                    </div>
+                    <span class="font-semibold">530</span>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">2</span>
+                        <img src="https://placehold.co/40x40" alt="Elgato Shafie" class="rounded-full" crossorigin="anonymous">
+                        <span class="ml-2">Elgato Shafie</span>
+                    </div>
+                    <span class="font-semibold">480</span>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">3</span>
+                        <img src="https://placehold.co/40x40" alt="Lisa" class="rounded-full" crossorigin="anonymous">
+                        <span class="ml-2">Lisa</span>
+                    </div>
+                    <span class="font-semibold">433</span>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">4</span>
+                        <img src="https://placehold.co/40x40" alt="Amirul Bakar" class="rounded-full" crossorigin="anonymous">
+                        <span class="ml-2">Amirul Bakar</span>
+                    </div>
+                    <span class="font-semibold">330</span>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">5</span>
+                        <img src="https://placehold.co/40x40" alt="Rawks" class="rounded-full" crossorigin="anonymous">
+                        <span class="ml-2">Rawks</span>
+                    </div>
+                    <span class="font-semibold">280</span>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">6</span>
+                        <img src="https://placehold.co/40x40" alt="Danial" class="rounded-full" crossorigin="anonymous">
+                        <span class="ml-2">Danial</span>
+                    </div>
+                    <span class="font-semibold">230</span>
                 </div>
             </div>
+        </div>
+        <div class="fixed bottom-0 inset-x-0 bg-white p-2 flex justify-around border-t">
+            <button class="text-blue-500">
+                <img src="https://placehold.co/24x24" alt="Home" crossorigin="anonymous">
+            </button>
+            <button>
+                <img src="https://placehold.co/24x24" alt="Activity" crossorigin="anonymous">
+            </button>
+            <button>
+                <img src="https://placehold.co/24x24" alt="Scores" crossorigin="anonymous">
+            </button>
+            <button>
+                <img src="https://placehold.co/24x24" alt="Settings" crossorigin="anonymous">
+            </button>
         </div>
     </div>
 </body>
