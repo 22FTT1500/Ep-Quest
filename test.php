@@ -46,8 +46,8 @@
                 <button class="text-blue-300">View More</button>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <img src="https://placehold.co/150x150" alt="Event 1" class="rounded-lg" />
-                <img src="https://placehold.co/150x150" alt="Event 2" class="rounded-lg" />
+                <img src="https://placehold.co/500x150" alt="Event 1" class="rounded-lg" />
+                <img src="https://placehold.co/500x150" alt="Event 2" class="rounded-lg" />
             </div>
         </div>
 

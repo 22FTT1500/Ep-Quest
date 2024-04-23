@@ -45,8 +45,8 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     <button class="text-blue-300">View More</button>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://placehold.co/150x150" alt="Event 1" class="rounded-lg" />
-                    <img src="https://placehold.co/150x150" alt="Event 2" class="rounded-lg" />
+                    <img src="https://placehold.co/400x350" alt="Event 1" class="rounded-lg" />
+                    <img src="https://placehold.co/400x350" alt="Event 2" class="rounded-lg" />
                 </div>
             </div>
 
@@ -55,15 +55,15 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     <h2 class="text-xl font-bold">Clubs</h2>
                     <button class="text-blue-300">View More</button>
                 </div>
-                <img src="https://placehold.co/300x150" alt="Club Photo" class="rounded-lg" />
+                <img src="https://placehold.co/500x400" alt="Club Photo" class="rounded-lg" />
             </div>
 
-            <div class="mt-auto bg-black p-2">
-                <div class="flex justify-around text-zinc-400">
-                    <span>Home</span>
-                    <span>Activity</span>
-                    <span>Scores</span>
-                    <span>Profile</span>
+            <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
+                <div class="flex justify-around text-zinc-200">
+                    <span><a href="">Home</a></span>
+                    <span><a href="">Activity</a></span>
+                    <span><a href="">Scores</a></span>
+                    <span><a href="">Profile</a></span>
                 </div>
             </div>
         </div>
