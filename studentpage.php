@@ -58,10 +58,10 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                 <img src="https://placehold.co/500x400" alt="Club Photo" class="rounded-lg" />
             </div>
 
-            <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
+            <div class="p-4 bg-blue-900 bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
                     <span><a href="">Home</a></span>
-                    <span><a href="">Activity</a></span>
+                    <span><a href="activitypage.php">Activity</a></span>
                     <span><a href="">Scores</a></span>
                     <span><a href="">Profile</a></span>
                 </div>
