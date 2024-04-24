@@ -42,7 +42,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <button class="">Feedback</button>
+                <a href="feedbackpage.php"><button class="">Feedback</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
