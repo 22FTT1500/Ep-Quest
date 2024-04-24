@@ -27,8 +27,6 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                 </div>
             </div>
 
-
-
             <div class="bg-blue-600 mx-4 my-4 p-4 rounded-lg text-center">
                 <div class="flex justify-center items-center mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +61,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     <span><a href="#">Home</a></span>
                     <span><a href="activitypage.php">Activity</a></span>
                     <span><a href="leaderboard.php">Scores</a></span>
-                    <span><a href="">Settings</a></span>
+                    <span><a href="settingpage.php">Settings</a></span>
                 </div>
             </div>
         </div>

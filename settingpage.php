@@ -30,7 +30,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             <h2 class="text-center text-2xl font-bold mb-4 mt-4 text-black">Settings</h2>
             <!-- Manage profile card button -->
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <button class="">Manage Profile</button>
+                <a href="manageprofile.php"><button class="">Manage Profile</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">

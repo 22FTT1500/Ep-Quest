@@ -58,7 +58,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     <span><a href="studentpage.php">Home</a></span>
                     <span><a href="#">Activity</a></span>
                     <span><a href="leaderboard.php">Scores</a></span>
-                    <span><a href="">Settings</a></span>
+                    <span><a href="settingpage.php">Settings</a></span>
                 </div>
             </div>
         </div>
