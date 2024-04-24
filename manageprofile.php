@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
 
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['email']) && isset($_SESSION['grpcode']) && isset($_SESSION['contactno']) && isset($_SESSION['course'])) {
 ?>
 
     <!DOCTYPE html>
@@ -12,7 +12,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+        <title>Student Profile</title>
     </head>
 
     <body class="bg-zinc-900 text-white font-sans">
@@ -29,11 +29,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <!-- Profile -->
-
             <div class="flex justify-center items-center mb-2">
                 <img src="https://placehold.co/100x100" alt="profile" class="rounded-full" />
             </div>
-
 
             <p class="text-lg font-bold">Student ID: <?php echo $_SESSION['student_id']; ?></p>
             <p class="text-lg font-bold">Full Name: <?php echo $_SESSION['fullname']; ?></p>
@@ -41,7 +39,6 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             <p class="text-lg font-bold">Group Code: <?php echo $_SESSION['grpcode']; ?></p>
             <p class="text-lg font-bold">Contact No: <?php echo $_SESSION['contactno']; ?></p>
             <p class="text-lg font-bold">Course: <?php echo $_SESSION['course']; ?></p>
-
 
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
@@ -52,7 +49,6 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                 </div>
             </div>
         </div>
-
     </body>
 
     </html>
