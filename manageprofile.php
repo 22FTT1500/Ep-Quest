@@ -23,7 +23,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     <img src="https://placehold.co/40x40" alt="profile" class="rounded-full ml-3" />
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
-                        <p class="text-sm">22ft1414@student.pb.edu.bn</p>
+                        <p class="text-sm"><?php echo $_SESSION['email']; ?></p>
                     </div>
                 </div>
             </div>
@@ -39,9 +39,8 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             <p class="text-lg font-bold">Full Name: <?php echo $_SESSION['fullname']; ?></p>
             <p class="text-lg font-bold">Student Email: <?php echo $_SESSION['email']; ?></p>
             <p class="text-lg font-bold">Group Code: <?php echo $_SESSION['grpcode']; ?></p>
-
             <p class="text-lg font-bold">Contact No: <?php echo $_SESSION['contactno']; ?></p>
-
+            <p class="text-lg font-bold">Course: <?php echo $_SESSION['course']; ?></p>
 
 
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
