@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['email'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
 
 ?>
 
@@ -38,6 +38,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
             <p class="text-lg font-bold">Student ID: <?php echo $_SESSION['student_id']; ?></p>
             <p class="text-lg font-bold">Full Name: <?php echo $_SESSION['fullname']; ?></p>
             <p class="text-lg font-bold">Student Email: <?php echo $_SESSION['email']; ?></p>
+            <p class="text-lg font-bold">Group Code: <?php echo $_SESSION['grpcode']; ?></p>
+
+            <p class="text-lg font-bold">Contact No: <?php echo $_SESSION['contactno']; ?></p>
 
 
 
