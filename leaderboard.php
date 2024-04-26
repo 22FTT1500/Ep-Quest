@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname'])) {
 ?>
 
     <!DOCTYPE html>
@@ -40,10 +40,11 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     </div>
                     <span class="font-semibold text-zinc-500">530</span>
                 </div>
+
             </div>
         </div>
 
-        <div class="p-4 bg-blue-900 bottom-0 w-full">
+        <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
             <div class="flex justify-around text-zinc-200">
                 <span><a href="studentpage.php">Home</a></span>
                 <span><a href="activitypage.php">Activity</a></span>
@@ -51,9 +52,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                 <span><a href="settingpage.php">Settings</a></span>
             </div>
         </div>
-        </div>
     </body>
-
 
     </html>
 

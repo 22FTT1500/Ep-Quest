@@ -14,7 +14,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
         <title>Document</title>
     </head>
 
-    <body class="bg-zinc-900 text-white font-sans">
+    <body class="bg-zinc-100 text-white font-sans">
         <div class="flex flex-col h-screen">
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
@@ -34,13 +34,13 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                     </svg>
                     <span class="text-3xl font-bold">140 EP</span>
                 </div>
-                <button class="bg-blue-800 text-white px-4 py-2 rounded-md">Get More Ep</button>
+                <a href="activitypage.php"><button class="bg-blue-800 text-white px-4 py-2 rounded-md">Get More Ep</button></a>
             </div>
 
             <div class="mx-4 my-2">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold">Events</h2>
-                    <button class="text-blue-300">View More</button>
+                    <h2 class="text-xl font-bold text-black">Events</h2>
+                    <a href="activitypage.php"><button class="text-blue-300">View More</button></a>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <img src="https://placehold.co/400x350" alt="Event 1" class="rounded-lg" />
@@ -50,13 +50,13 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
 
             <div class="mx-4 my-2 mb-4">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold">Clubs</h2>
-                    <button class="text-blue-300">View More</button>
+                    <h2 class="text-xl font-bold text-black">Clubs</h2>
+                    <a href="activitypage.php"><button class=" text-blue-300">View More</button></a>
                 </div>
                 <img src="https://placehold.co/500x400" alt="Club Photo" class="rounded-lg" />
             </div>
 
-            <div class="p-4 bg-blue-900 bottom-0 w-full">
+            <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
                     <span><a href="#">Home</a></span>
                     <span><a href="activitypage.php">Activity</a></span>

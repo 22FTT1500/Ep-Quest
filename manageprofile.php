@@ -2,7 +2,10 @@
 session_start();
 include 'db_conn.php';
 
-if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['email']) && isset($_SESSION['grpcode']) && isset($_SESSION['contactno']) && isset($_SESSION['course'])) {
+if (
+    isset($_SESSION['student_id']) && isset($_SESSION['fullname'])
+    && isset($_SESSION['email']) && isset($_SESSION['grpcode']) && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg'])
+) {
 ?>
 
     <!DOCTYPE html>
@@ -21,6 +24,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                 <!-- Profile Link -->
                 <div class="flex items-center">
                     <img src="https://placehold.co/40x40" alt="profile" class="rounded-full ml-3" />
+
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
                         <p class="text-sm"><?php echo $_SESSION['email']; ?></p>
@@ -30,8 +34,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
 
             <!-- Profile -->
             <div class="flex justify-center items-center mb-2">
-                <img src="https://placehold.co/100x100" alt="profile" class="rounded-full" />
+                <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full" />
             </div>
+
 
             <p class="text-lg font-bold">Student ID: <?php echo $_SESSION['student_id']; ?></p>
             <p class="text-lg font-bold">Full Name: <?php echo $_SESSION['fullname']; ?></p>

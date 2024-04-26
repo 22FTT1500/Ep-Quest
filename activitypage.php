@@ -14,7 +14,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
         <title>Document</title>
     </head>
 
-    <body class="bg-zinc-900 text-white font-sans">
+    <body class="bg-zinc-100 text-white font-sans">
         <div class="flex flex-col h-screen">
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
