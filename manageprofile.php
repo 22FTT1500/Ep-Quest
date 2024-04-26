@@ -4,7 +4,8 @@ include 'db_conn.php';
 
 if (
     isset($_SESSION['student_id']) && isset($_SESSION['fullname'])
-    && isset($_SESSION['email']) && isset($_SESSION['grpcode']) && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg'])
+    && isset($_SESSION['email']) && isset($_SESSION['grpcode'])
+    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg'])
 ) {
 ?>
 
