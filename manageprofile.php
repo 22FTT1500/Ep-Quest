@@ -23,8 +23,17 @@ if (
         <div class="flex flex-col h-screen">
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
-                <div class="flex items-center">
-                    <img src="https://placehold.co/40x40" alt="profile" class="rounded-full ml-3" />
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
+                        <!-- add center title -->
+                    </div>
+                    <div class="justify-self-center ml-3">
+                        <h1 class="font-bold">Manage Profile</h1>
+                    </div>
+                    <div>
+                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    </div>
                 </div>
             </div>
 

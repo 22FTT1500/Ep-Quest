@@ -43,17 +43,17 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                     <a href="activitypage.php"><button class="text-blue-300">View More</button></a>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://placehold.co/400x350" alt="Event 1" class="rounded-lg" />
-                    <img src="https://placehold.co/400x350" alt="Event 2" class="rounded-lg" />
+                    <img src="./assets/EsportEvent.jpg" alt="Event 1" class="rounded-lg bg-cover h-48 w-64" />
+                    <img src="./assets/GoldenEvent.jpg" alt="Event 2" class="rounded-lg bg-cover h-48 w-64" />
                 </div>
             </div>
 
-            <div class="mx-4 my-2 mb-4">
+            <div class="mx-4 my-6 mb-4">
                 <div class="flex justify-between items-center mb-2">
                     <h2 class="text-xl font-bold text-black">Clubs</h2>
                     <a href="activitypage.php"><button class=" text-blue-300">View More</button></a>
                 </div>
-                <img src="https://placehold.co/500x400" alt="Club Photo" class="rounded-lg" />
+                <img src="./assets/handball.jpg" alt="Club Photo" class="rounded-lg" />
             </div>
 
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">

@@ -34,11 +34,11 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <button class="">Ep Records</button>
+                <a href=""><button class="">Ep Records</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <button class="">Manage Club</button>
+                <a href=""><button class="">Manage Club</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
@@ -46,7 +46,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <button class="">About us</button>
+                <a href="aboutpage.php"><button class="">About us</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
