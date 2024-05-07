@@ -25,11 +25,6 @@ if (
                 <!-- Profile Link -->
                 <div class="flex items-center">
                     <img src="https://placehold.co/40x40" alt="profile" class="rounded-full ml-3" />
-
-                    <div class="ml-3">
-                        <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
-                        <p class="text-sm"><?php echo $_SESSION['email']; ?></p>
-                    </div>
                 </div>
             </div>
 
