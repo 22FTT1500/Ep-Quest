@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg']) && isset($_SESSION['point'])) {
 ?>
 
     <!DOCTYPE html>
@@ -35,7 +35,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
-                    <span class="text-3xl font-bold">140 EP</span>
+                    <span class="text-3xl font-bold"><?php echo $_SESSION['point']; ?></span>
                 </div>
                 <a href="activitypage.php"><button class="bg-blue-800 text-white px-4 py-2 rounded-md">Get More Ep</button></a>
             </div>
