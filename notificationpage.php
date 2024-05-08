@@ -1,46 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+include 'db_conn.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+if (
+    isset($_SESSION['student_id']) && isset($_SESSION['fullname'])
+    && isset($_SESSION['email']) && isset($_SESSION['grpcode'])
+    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg'])
+) {
+?>
 
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
 
-<body class="bg-zinc-100 dark:bg-zinc-800">
-    <div class="max-w-sm mx-auto">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
 
-        <div class="flex items-center justify-between p-4 bg-white dark:bg-zinc-900 shadow">
-            <button class="text-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6-6m-6 6l6 6" />
-                </svg>
-            </button>
-            <h1 class="text-lg font-semibold text-zinc-900 dark:text-white">Notification</h1>
-            <button class="text-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-            </button>
+    <body class="bg-zinc-100 text-white font-sans">
+        <div class="flex flex-col h-screen">
+
+            <div class="p-4 bg-blue-900">
+                <!-- Profile Link -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
+                        <!-- add center title -->
+                    </div>
+                    <div class="justify-self-center ml-3">
+                        <h1 class="font-bold">Notification</h1>
+                    </div>
+                    <div>
+                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-4 space-y-2">
+                <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
+                    <h2 class="text-lg font-bold text-zinc-900 dark:text-white">Join Movie Club Now 🍿</h2>
+                    <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
+                </div>
+                <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
+                    <h2 class="text-lg font-bold text-zinc-900 dark:text-white">PUBGM AND VALORANT TOURNAMENT</h2>
+                    <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
+                </div>
+                <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
+                    <h2 class="text-lg font-bold text-zinc-900 dark:text-white">HANDBALL CLUB OFFERS 3K HOLY !!!</h2>
+                    <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
+                </div>
+            </div>
         </div>
 
-
-        <div class="mt-4 space-y-2">
-            <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
-                <h2 class="text-lg font-bold text-zinc-900 dark:text-white">Join Movie Club Now 🍿</h2>
-                <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
-            </div>
-            <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
-                <h2 class="text-lg font-bold text-zinc-900 dark:text-white">PUBGM AND VALORANT TOURNAMENT</h2>
-                <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
-            </div>
-            <div class="bg-white dark:bg-zinc-900 p-4 shadow rounded-lg">
-                <h2 class="text-lg font-bold text-zinc-900 dark:text-white">HANDBALL CLUB OFFERS 3K HOLY !!!</h2>
-                <p class="text-zinc-500 dark:text-zinc-400">14/02/2024 10:30 AM</p>
+        <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
+            <div class="flex justify-around text-zinc-200">
             </div>
         </div>
-    </div>
-</body>
+    </body>
 
-</html>
+    </html>
+
+<?php
+} else {
+    header("Location: index.php");
+    exit();
+}
+?>
