@@ -1,7 +1,12 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg'])) {
+
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg'])) {
+    // Retrieve all clubs from the database
+    $sql = "SELECT * FROM clubs";
+    $result = mysqli_query($conn, $sql);
+
 ?>
 
     <!DOCTYPE html>
@@ -42,19 +47,27 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                 </div>
             </div>
 
-            <!-- Activity card -->
+            <!-- Activity cards for each club -->
             <div class="mx-4 my-2">
-                <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                    <img src="https://placehold.co/600x300" alt="Handball Club" class="w-full h-48 sm:h-64 object-cover">
-                    <div class="p-4">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-lg font-semibold dark:text-white">Club Name</h2>
-                            <span class="bg-green-500 text-white dark:text-white py-1 px-3 rounded-full text-xs">3K</span>
+                <?php
+                // Loop through the result set and display each club
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <a href="clubpage.php?ClubID=<?php echo $row['ClubID']; ?>" class="block mb-4">
+                        <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
+                            <img src="<?php echo $row['ImgBanner']; ?>" alt="<?php echo $row['ClubName']; ?>" class="w-full h-48 sm:h-64 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-lg font-semibold dark:text-white"><?php echo $row['ClubName']; ?></h2>
+                                    <span class="bg-green-500 text-white dark:text-white py-1 px-3 rounded-full text-xs">3K</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </a>
+                <?php
+                }
+                ?>
             </div>
-
 
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
