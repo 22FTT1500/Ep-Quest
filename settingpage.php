@@ -41,7 +41,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <a href=""><button class="">Manage Club</button></a>
+                <a href="manageclub.php"><button class="">Manage Club</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
