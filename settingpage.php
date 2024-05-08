@@ -24,6 +24,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
                         <p class="text-sm">22ft1414@student.pb.edu.bn</p>
                     </div>
+                    <div class="ml-auto">
+                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    </div>
                 </div>
             </div>
 
@@ -38,7 +41,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id'])) {
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">
-                <a href=""><button class="">Manage Club</button></a>
+                <a href="manageclub.php"><button class="">Manage Club</button></a>
             </div>
 
             <div class="mx-4 my-2 p-4 bg-blue-600 rounded-lg text-center">

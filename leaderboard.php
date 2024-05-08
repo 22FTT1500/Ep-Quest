@@ -24,6 +24,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname'])) {
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
                         <p class="text-sm">22ft1414@student.pb.edu.bn</p>
                     </div>
+                    <div class="ml-auto">
+                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    </div>
                 </div>
             </div>
 
