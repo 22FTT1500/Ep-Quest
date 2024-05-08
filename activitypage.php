@@ -25,7 +25,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                         <p class="text-sm">22ft1414@student.pb.edu.bn</p>
                     </div>
                     <div class="ml-auto">
-                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                        <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
                     </div>
                 </div>
             </div>
