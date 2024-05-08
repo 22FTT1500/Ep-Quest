@@ -45,7 +45,8 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     <div class="flex items-center justify-between bg-orange-100 p-4 rounded-lg">
                         <div class="flex items-center">
                             <span class="text-lg font-bold mr-2 text-zinc-500"><?php echo $row['stid']; ?></span>
-                            <img src="<?php echo $_SESSION['profileimg']; ?>" class="rounded-full size-10" crossorigin="anonymous">
+                            <img src="<?php echo $row['profileimg']; ?>" class="rounded-full size-10" crossorigin="anonymous">
+
 
                             <div class="ml-2">
                                 <p class="font-semibold text-zinc-500"><?php echo $row['fullname']; ?></p>
