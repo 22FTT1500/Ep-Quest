@@ -25,6 +25,12 @@
                 </div>
             </div>
         </div>
+        <div id="feedbackMessage" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
+            <div class="bg-white p-4 rounded-md shadow-md text-center">
+                <p class="text-green-500 text-center">Thank you for your feedback!</p>
+                <button id="closeFeedback" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">Close</button>
+            </div>
+        </div>
         <?php
         // Check if the form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,7 +45,7 @@
             // ...
 
             // Show a success message (optional)
-            echo "<p class='text-green-500 text-center'>Thank you for your feedback!</p>";
+            echo "<script>document.getElementById('feedbackMessage').classList.remove('hidden');</script>";
         }
         ?>
         <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
@@ -71,6 +77,12 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('closeFeedback').addEventListener('click', function() {
+            document.getElementById('feedbackMessage').classList.add('hidden');
+        });
+    </script>
 </body>
 
 </html>
