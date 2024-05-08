@@ -9,88 +9,42 @@
 </head>
 
 <body class="bg-zinc-900 text-white font-sans">
-    <div class="bg-blue-500 min-h-screen p-4">
-        <div class="bg-white rounded-lg p-4 shadow-md">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center">
-                    <img src="https://placehold.co/40x40" alt="User" class="rounded-full" crossorigin="anonymous">
-                    <div class="ml-2">
-                        <p class="font-semibold">Lala</p>
-                        <p class="text-xs text-zinc-500">22ftt1414@student.pb.edu.bn</p>
-                    </div>
-                </div>
-                <button class="bg-blue-200 p-2 rounded-full">
-                    <img src="https://placehold.co/24x24" alt="Notification" crossorigin="anonymous">
-                </button>
+    <div class="max-w-screen-lg mx-auto">
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div>
+                <img src="https://placehold.co/300x150" alt="Handball Game" class="rounded-xl mb-4">
+                <h2 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Description</h2>
+                <p class="text-zinc-600 dark:text-zinc-300 text-sm">
+                    Handball is a team sport in which two teams of seven players each pass a ball using their hands with the aim of throwing it into the goal of the opposing team. A standard match consists of two periods of 30 minutes, and the team that scores more goals wins.
+                </p>
             </div>
-            <h2 class="text-center text-2xl font-bold mb-4">Leaderboard</h2>
-            <div class="space-y-3">
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">1</span>
-                        <img src="https://placehold.co/40x40" alt="User" class="rounded-full" crossorigin="anonymous">
-                        <div class="ml-2">
-                            <p class="font-semibold">Lala</p>
-                            <p class="text-xs text-zinc-500">22ftt1414</p>
-                        </div>
-                    </div>
-                    <span class="font-semibold">530</span>
-                </div>
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">2</span>
-                        <img src="https://placehold.co/40x40" alt="Elgato Shafie" class="rounded-full" crossorigin="anonymous">
-                        <span class="ml-2">Elgato Shafie</span>
-                    </div>
-                    <span class="font-semibold">480</span>
-                </div>
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">3</span>
-                        <img src="https://placehold.co/40x40" alt="Lisa" class="rounded-full" crossorigin="anonymous">
-                        <span class="ml-2">Lisa</span>
-                    </div>
-                    <span class="font-semibold">433</span>
-                </div>
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">4</span>
-                        <img src="https://placehold.co/40x40" alt="Amirul Bakar" class="rounded-full" crossorigin="anonymous">
-                        <span class="ml-2">Amirul Bakar</span>
-                    </div>
-                    <span class="font-semibold">330</span>
-                </div>
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">5</span>
-                        <img src="https://placehold.co/40x40" alt="Rawks" class="rounded-full" crossorigin="anonymous">
-                        <span class="ml-2">Rawks</span>
-                    </div>
-                    <span class="font-semibold">280</span>
-                </div>
-                <div class="flex items-center justify-between bg-zinc-100 p-3 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2">6</span>
-                        <img src="https://placehold.co/40x40" alt="Danial" class="rounded-full" crossorigin="anonymous">
-                        <span class="ml-2">Danial</span>
-                    </div>
-                    <span class="font-semibold">230</span>
-                </div>
+
+            <div>
+                <h2 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Club Managers</h2>
+                <p class="text-zinc-600 dark:text-zinc-300 text-sm">
+                    Awang Haji Luffy<br>
+                    Steven fantechn<br>
+                    Andrew
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Sessions</h2>
+                <p class="text-zinc-600 dark:text-zinc-300 text-sm">
+                    Berakas Sports Complex every Saturday on 2:30 PM
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Club offers 3K Event!!</h2>
             </div>
         </div>
-        <div class="fixed bottom-0 inset-x-0 bg-white p-2 flex justify-around border-t">
-            <button class="text-blue-500">
-                <img src="https://placehold.co/24x24" alt="Home" crossorigin="anonymous">
-            </button>
-            <button>
-                <img src="https://placehold.co/24x24" alt="Activity" crossorigin="anonymous">
-            </button>
-            <button>
-                <img src="https://placehold.co/24x24" alt="Scores" crossorigin="anonymous">
-            </button>
-            <button>
-                <img src="https://placehold.co/24x24" alt="Settings" crossorigin="anonymous">
-            </button>
+
+        <div class="flex flex-col md:flex-row justify-around p-4">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-2 md:mb-0 md:mr-2">Joined</button>
+            <button class="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-lg">Session</button>
         </div>
     </div>
 </body>

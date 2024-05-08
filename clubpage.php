@@ -9,11 +9,21 @@
 </head>
 
 <body>
-    <div class="bg-white max-w-sm mx-auto rounded-lg shadow-md overflow-hidden">
-        <div class="bg-blue-500 p-4 flex justify-between items-center text-white">
-            <button class="text-2xl">←</button>
-            <h1 class="text-xl font-bold">Handball Club</h1>
-            <button>🔔</button>
+    <div class="bg-white ">
+        <div class="p-4 bg-blue-900">
+            <!-- Profile Link -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
+                    <!-- add center title -->
+                </div>
+                <div class="justify-self-center ml-3">
+                    <h1 class="font-bold">Manage Profile</h1>
+                </div>
+                <div>
+                    <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                </div>
+            </div>
         </div>
         <img src="https://placehold.co/400x200.png?text=Handball+Team" alt="Handball Team" class="w-full">
         <div class="p-4">

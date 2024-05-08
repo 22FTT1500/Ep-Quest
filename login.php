@@ -37,6 +37,7 @@ if (isset($_POST['stuid']) && isset($_POST['password'])) {
                 $_SESSION['contactno'] = $row['contactno'];
                 $_SESSION['course'] = $row['course'];
                 $_SESSION['profileimg'] = $row['profileimg'];
+                $_SESSION['point'] = $row['point'];
 
                 header('Location: studentpage.php');
                 exit();

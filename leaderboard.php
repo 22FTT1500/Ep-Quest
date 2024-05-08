@@ -1,7 +1,13 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['fullname'])) {
+
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg'])) {
+    // Retrieve user data ordered by EP points
+    $sql = "SELECT stid, fullname, student_id, profileimg, point FROM student_details ORDER BY point DESC";
+
+    $result = mysqli_query($conn, $sql);
+
 ?>
 
     <!DOCTYPE html>
@@ -11,7 +17,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+        <title>Leaderboard</title>
     </head>
 
     <body class="bg-zinc-900 text-white font-sans">
@@ -24,23 +30,33 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname'])) {
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
                         <p class="text-sm">22ft1414@student.pb.edu.bn</p>
                     </div>
+                    <div class="ml-auto">
+                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    </div>
                 </div>
             </div>
 
             <h2 class="text-center text-2xl font-bold mb-4">Leaderboard</h2>
             <div class="mx-4 my-2">
-                <div class="flex items-center justify-between bg-orange-100 p-4 rounded-lg">
-                    <div class="flex items-center">
-                        <span class="text-lg font-bold mr-2 text-zinc-500">1</span>
-                        <img src="https://placehold.co/40x40" alt="User" class="rounded-full" crossorigin="anonymous">
-                        <div class="ml-2">
-                            <p class="font-semibold text-zinc-500">Lala</p>
-                            <p class="text-xs text-zinc-500">22ftt1414</p>
-                        </div>
-                    </div>
-                    <span class="font-semibold text-zinc-500">530</span>
-                </div>
+                <?php
+                // Loop through the result set and display each user
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <div class="flex items-center justify-between bg-orange-100 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-lg font-bold mr-2 text-zinc-500"><?php echo $row['stid']; ?></span>
+                            <img src="<?php echo $_SESSION['profileimg']; ?>" class="rounded-full size-10" crossorigin="anonymous">
 
+                            <div class="ml-2">
+                                <p class="font-semibold text-zinc-500"><?php echo $row['fullname']; ?></p>
+                                <p class="text-xs text-zinc-500"><?php echo $row['student_id']; ?></p>
+                            </div>
+                        </div>
+                        <span class="font-semibold text-zinc-500"><?php echo $row['point']; ?></span>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
