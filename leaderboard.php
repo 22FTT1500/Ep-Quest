@@ -20,7 +20,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
         <title>Leaderboard</title>
     </head>
 
-    <body class="bg-zinc-900 text-white font-sans">
+    <body class="bg-zinc-100 text-white font-sans">
         <div class="flex flex-col h-screen">
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
@@ -42,7 +42,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                 // Loop through the result set and display each user
                 while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                    <div class="flex items-center justify-between bg-orange-100 p-4 rounded-lg">
+                    <div class="flex items-center justify-between bg-orange-100 p-4 rounded-lg my-2">
                         <div class="flex items-center">
                             <span class="text-lg font-bold mr-2 text-zinc-500"><?php echo $row['stid']; ?></span>
                             <img src="<?php echo $row['profileimg']; ?>" class="rounded-full size-10" crossorigin="anonymous">
