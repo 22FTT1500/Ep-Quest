@@ -13,6 +13,14 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
 
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
+
+            // Check if the student has already joined the club
+            $student_id = $_SESSION['student_id'];
+            $check_sql = "SELECT * FROM student_cca WHERE student_id = '$student_id' AND cca_name = '{$row['ClubName']}'";
+            $check_result = mysqli_query($conn, $check_sql);
+
+            // If the student has already joined the club, hide the join button and show the session button
+            $is_joined = mysqli_num_rows($check_result) > 0;
 ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -57,7 +65,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                         <p><?php echo $row['Sessions']; ?></p>
                     </div>
                     <div class="flex justify-around p-4 bg-zinc-100">
-                        <button id="joinButton" class="bg-blue-500 text-white rounded-lg px-4 py-2">Join</button>
+                        <!-- Hide or show the buttons based on whether the student has joined the club -->
+                        <button id="joinButton" class="bg-blue-500 text-white rounded-lg px-4 py-2" <?php echo $is_joined ? 'style="display:none;"' : ''; ?>>Join</button>
+                        <button id="sessionButton" class="bg-green-500 text-white rounded-lg px-4 py-2" <?php echo $is_joined ? '' : 'style="display:none;"'; ?>>Session</button>
                     </div>
                 </div>
 
@@ -66,9 +76,9 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     <div class="bg-white p-8 rounded-lg shadow-md join-form">
                         <h2 class="text-lg font-bold mb-4">Join Club</h2>
                         <form id="joinClubForm">
-                            <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
-                            <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
-                            <input type="text" id="groupCode" name="groupCode" placeholder="Group Code" required>
+                            <input type="text" id="studentID" name="studentID" placeholder="Student ID" required><br>
+                            <input type="text" id="fullname" name="fullname" placeholder="Full Name" required><br>
+                            <input type="text" id="groupCode" name="groupCode" placeholder="Group Code" required><br>
                             <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-2">Submit</button>
                         </form>
                     </div>
@@ -82,20 +92,19 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     document.getElementById("joinClubForm").addEventListener("submit", function(event) {
                         event.preventDefault();
 
-                        var formData = new FormData(this);
+                        var formData = new URLSearchParams(new FormData(this));
 
                         fetch("join_club.php?ClubID=<?php echo $club_id; ?>", {
                                 method: "POST",
-                                body: formData,
-                                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                }
+                                body: formData
                             })
                             .then(response => response.json())
                             .then(data => {
                                 alert(data.message);
                                 if (data.success) {
-                                    // Handle success, like showing a success message or redirecting
+                                    // Hide the join button and show the session button
+                                    document.getElementById("joinButton").style.display = "none";
+                                    document.getElementById("sessionButton").style.display = "block";
                                 }
                             })
                             .catch(error => {

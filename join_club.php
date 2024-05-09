@@ -2,30 +2,35 @@
 session_start();
 include 'db_conn.php';
 
-$response = array();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $studentID = $_POST["studentID"];
-    $fullname = $_POST["fullname"];
-    $groupCode = $_POST["groupCode"];
-    $clubID = $_GET["ClubID"];
+    // Check if the required fields are set
+    if (isset($_POST['studentID']) && isset($_POST['fullname']) && isset($_POST['groupCode']) && isset($_GET['ClubID'])) {
+        // Sanitize input to prevent SQL injection
+        $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
+        $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+        $groupCode = mysqli_real_escape_string($conn, $_POST['groupCode']);
+        $clubID = mysqli_real_escape_string($conn, $_GET['ClubID']);
 
-    if (!empty($studentID) && !empty($fullname) && !empty($groupCode)) {
-        $sql = "UPDATE student_details SET joined_club = '$clubID' WHERE student_id = '$studentID'";
+        // Fetch club details from the database to get the ClubName
+        $sql_club = "SELECT ClubName FROM clubs WHERE ClubID = '$clubID'";
+        $result_club = mysqli_query($conn, $sql_club);
+        $row_club = mysqli_fetch_assoc($result_club);
+        $clubName = $row_club['ClubName'];
+
+        // Insert into student_cca table
+        $sql = "INSERT INTO student_cca (student_id, cca_name, joining_date) VALUES ('$studentID', '$clubName', NOW())";
         if (mysqli_query($conn, $sql)) {
-            $response["success"] = true;
-            $response["message"] = "Joined club successfully!";
+            $response = array("success" => true, "message" => "Joined club successfully.");
+            echo json_encode($response);
         } else {
-            $response["success"] = false;
-            $response["message"] = "Error joining club: " . mysqli_error($conn);
+            $response = array("success" => false, "message" => "Error joining club: " . mysqli_error($conn));
+            echo json_encode($response);
         }
     } else {
-        $response["success"] = false;
-        $response["message"] = "Please fill in all fields.";
+        $response = array("success" => false, "message" => "Missing required parameters.");
+        echo json_encode($response);
     }
 } else {
-    $response["success"] = false;
-    $response["message"] = "Invalid request method.";
+    header("Location: index.php");
+    exit();
 }
-
-echo json_encode($response);
