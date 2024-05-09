@@ -22,10 +22,16 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <script src="https://cdn.tailwindcss.com"></script>
                 <title><?php echo $row['ClubName']; ?> Detail</title>
+                <style>
+                    /* Add your CSS styles here */
+                    .join-form input {
+                        margin-right: 10px;
+                    }
+                </style>
             </head>
 
             <body>
-                <div class="bg-white ">
+                <div class="bg-white">
                     <div class="p-4 bg-blue-900">
                         <!-- Profile Link -->
                         <div class="flex items-center justify-between">
@@ -51,10 +57,52 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                         <p><?php echo $row['Sessions']; ?></p>
                     </div>
                     <div class="flex justify-around p-4 bg-zinc-100">
-                        <button class="bg-blue-500 text-white rounded-lg px-4 py-2">Joined</button>
-                        <button class="bg-zinc-300 rounded-lg px-4 py-2">Session</button>
+                        <button id="joinButton" class="bg-blue-500 text-white rounded-lg px-4 py-2">Join</button>
                     </div>
                 </div>
+
+                <!-- Join Club Form Popup -->
+                <div id="joinForm" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md join-form">
+                        <h2 class="text-lg font-bold mb-4">Join Club</h2>
+                        <form id="joinClubForm">
+                            <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
+                            <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                            <input type="text" id="groupCode" name="groupCode" placeholder="Group Code" required>
+                            <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById("joinButton").addEventListener("click", function() {
+                        document.getElementById("joinForm").classList.remove("hidden");
+                    });
+
+                    document.getElementById("joinClubForm").addEventListener("submit", function(event) {
+                        event.preventDefault();
+
+                        var formData = new FormData(this);
+
+                        fetch("join_club.php?ClubID=<?php echo $club_id; ?>", {
+                                method: "POST",
+                                body: formData,
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                alert(data.message);
+                                if (data.success) {
+                                    // Handle success, like showing a success message or redirecting
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error:", error);
+                            });
+                    });
+                </script>
 
             </body>
 
