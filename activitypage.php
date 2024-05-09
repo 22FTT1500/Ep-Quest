@@ -4,8 +4,12 @@ include 'db_conn.php';
 
 if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg'])) {
     // Retrieve all clubs from the database
-    $sql = "SELECT * FROM clubs";
-    $result = mysqli_query($conn, $sql);
+    $sqlClubs = "SELECT * FROM clubs";
+    $resultClubs = mysqli_query($conn, $sqlClubs);
+
+    // Retrieve all events from the database
+    $sqlEvents = "SELECT * FROM events";
+    $resultEvents = mysqli_query($conn, $sqlEvents);
 
 ?>
 
@@ -20,7 +24,8 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
     </head>
 
     <body class="bg-zinc-100 text-white font-sans">
-        <div class="flex flex-col h-screen">
+        <div class="flex flex-col">
+            <!-- Header -->
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
                 <div class="flex items-center">
@@ -48,10 +53,10 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             </div>
 
             <!-- Activity cards for each club -->
-            <div class="mx-4 my-2">
+            <div class="mx-4 my-5">
                 <?php
-                // Loop through the result set and display each club
-                while ($row = mysqli_fetch_assoc($result)) {
+                // Display clubs
+                while ($row = mysqli_fetch_assoc($resultClubs)) {
                 ?>
                     <a href="clubpage.php?ClubID=<?php echo $row['ClubID']; ?>" class="block mb-4">
                         <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
@@ -59,7 +64,24 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                             <div class="p-4">
                                 <div class="flex justify-between items-center">
                                     <h2 class="text-lg font-semibold dark:text-white"><?php echo $row['ClubName']; ?></h2>
-                                    <span class="bg-green-500 text-white dark:text-white py-1 px-3 rounded-full text-xs">3K</span>
+                                    <!-- Add any other club details you want to display -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php
+                }
+
+                // Display events
+                while ($row = mysqli_fetch_assoc($resultEvents)) {
+                ?>
+                    <a href="eventpage.php?EventID=<?php echo $row['EventID']; ?>" class="block mb-7">
+                        <div class="bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
+                            <img src="<?php echo $row['ImgBanner']; ?>" alt="<?php echo $row['EventName']; ?>" class="w-full h-48 sm:h-64 object-cover">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-lg font-semibold dark:text-white"><?php echo $row['EventName']; ?></h2>
+                                    <!-- Add any other event details you want to display -->
                                 </div>
                             </div>
                         </div>
@@ -69,6 +91,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                 ?>
             </div>
 
+            <!-- Footer -->
             <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
                 <div class="flex justify-around text-zinc-200">
                     <span><a href="studentpage.php">Home</a></span>
