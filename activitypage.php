@@ -33,7 +33,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
         <title>Activity Page</title>
     </head>
 
-    <body class="bg-zinc-100 text-white font-sans">
+    <body class="bg-zinc-100 font-sans">
         <div class="flex flex-col">
             <!-- Header -->
             <div class="p-4 bg-blue-900">
