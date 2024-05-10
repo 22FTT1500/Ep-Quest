@@ -26,6 +26,19 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             $status = "attended"; // Assuming the student attended the session
             $stmt->bind_param("ssisss", $student_id, $student_name, $club_id, $status, $img_banner, $club_point);
             if ($stmt->execute()) {
+                // Update total_ep_points for the student
+                $update_sql = "UPDATE student_details sd
+                JOIN (
+                    SELECT sa.student_id, SUM(sa.club_point) AS total_club_point
+                    FROM student_attendance sa
+                    WHERE sa.student_id = ?
+                    GROUP BY sa.student_id
+                ) sa ON sd.student_id = sa.student_id
+                SET sd.total_ep_points = sd.point + sa.total_club_point";
+                $stmt_update = $conn->prepare($update_sql);
+                $stmt_update->bind_param("s", $student_id);
+                $stmt_update->execute();
+
                 // Redirect to attendance_success.php
                 $_SESSION['club_id'] = $club_id;
                 $_SESSION['sign_in_date'] = date("Y-m-d H:i:s");
@@ -47,6 +60,10 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
     exit();
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

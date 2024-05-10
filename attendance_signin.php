@@ -28,14 +28,29 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             if ($stmt->execute()) {
                 // Successfully inserted attendance record
 
-                // Set session variables
-                $_SESSION['club_id'] = $club_id;
-                $_SESSION['sign_in_date'] = date('Y-m-d H:i:s'); // Assuming current date and time
-                $_SESSION['club_point'] = $club_point;
+                // Update total_ep_points for the student
+                $update_sql = "UPDATE student_details sd
+                               SET sd.total_ep_points = (SELECT SUM(sa.club_point) + sd.point
+                                                         FROM student_attendance sa 
+                                                         WHERE sa.student_id = ?)
+                               WHERE sd.student_id = ?";
+                $update_stmt = $conn->prepare($update_sql);
+                $update_stmt->bind_param("ss", $student_id, $student_id);
+                if ($update_stmt->execute()) {
+                    // Successfully updated total_ep_points
 
-                // Redirect to attendance_success.php
-                header("Location: attendance_success.php");
-                exit();
+                    // Set session variables
+                    $_SESSION['club_id'] = $club_id;
+                    $_SESSION['sign_in_date'] = date('Y-m-d H:i:s'); // Assuming current date and time
+                    $_SESSION['club_point'] = $club_point;
+
+                    // Redirect to attendance_success.php
+                    header("Location: attendance_success.php");
+                    exit();
+                } else {
+                    // Error occurred while updating total_ep_points
+                    echo "Error updating total_ep_points: " . $update_stmt->error;
+                }
             } else {
                 // Error occurred while inserting record
                 echo "Error: " . $stmt->error;
