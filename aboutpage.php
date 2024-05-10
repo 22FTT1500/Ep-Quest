@@ -15,14 +15,14 @@
             <!-- Profile Link -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-10" /></a>
+                    <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
                     <!-- add center title -->
                 </div>
                 <div class="justify-self-center ml-3 text-white text-xl">
                     <h1 class="font-bold">About Us</h1>
                 </div>
                 <div>
-                    <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                    <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
         <!-- <div class="flex justify-center items-center">
             <button class="text-blue-500">&#x2715;</button>
         </div> -->
-        <div class=" bg-sky-400 rounded-tr-[15px] rounded-tl-[15px] border-2 border-black font-bold fixed bottom-0 left-0 right-0 p-4 text-center">
+        <div class=" bg-sky-400 rounded-tr-[30px] rounded-tl-[30px] border-2 border-black font-bold fixed bottom-0 left-0 right-0 p-4 text-center">
             <p>Contact Us: +673 2020900</p>
         </div>
     </div>

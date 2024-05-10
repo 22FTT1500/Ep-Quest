@@ -48,7 +48,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                         <p class="text-base">22ft1414@student.pb.edu.bn</p>
                     </div>
                     <div class="ml-auto">
-                        <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-10" /></a>
+                        <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
                     </div>
                 </div>
             </div>
@@ -111,28 +111,28 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
 
             <br>
             <br>
+
             <!-- Footer -->
             <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
-                <div class="flex justify-around items-center"> <!-- Added items-center -->
-                    <a href="studentpage.php" class="flex flex-col items-center"> <!-- Added flex and items-center to each anchor -->
+                <div class="flex justify-around items-center">
+                    <a href="studentpage.php" class="flex flex-col items-center">
                         <img src="./assets/homeButton.png" alt="home" class="rounded-full size-8">
                         <span>Home</span>
                     </a>
-                    <a href="activitypage.php" class="flex flex-col items-center"> <!-- Added flex and items-center to each anchor -->
+                    <a href="activitypage.php" class="flex flex-col items-center">
                         <img src="./assets/activitySelectedButton.png" alt="activities" class="rounded-full size-8">
                         <span>Activity</span>
                     </a>
-                    <a href="leaderboard.php" class="flex flex-col items-center"> <!-- Added flex and items-center to each anchor -->
+                    <a href="leaderboard.php" class="flex flex-col items-center">
                         <img src="./assets/scoreButton.png" alt="scores" class="rounded-full size-8">
                         <span>Scores</span>
                     </a>
-                    <a href="settingpage.php" class="flex flex-col items-center"> <!-- Added flex and items-center to each anchor -->
+                    <a href="settingpage.php" class="flex flex-col items-center">
                         <img src="./assets/settingsButton.png" alt="settings" class="rounded-full size-8">
                         <span>Settings</span>
                     </a>
                 </div>
             </div>
-
 
         </div>
     </body>

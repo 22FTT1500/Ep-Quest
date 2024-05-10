@@ -13,11 +13,11 @@
 
             <div class="flex justify-between items-center py-8 px-4 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black">
 
-                <a href="activitypage.php"><img src="./assets/left-arrow.png" alt="back" class="rounded-full ml-3 size-7" /></a>
+                <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="back" class="rounded-full ml-3 size-7" /></a>
 
                 <h1 class="text-xl font-bold text-white">Ep Records</h1>
 
-                <img src="./assets/bell.png" alt="bell" class="rounded-full ml-3 size-7" />
+                <a href="notificationpage.php"><img src="./assets/bell.png" alt="bell" class="rounded-full ml-3 size-7" /></a>
 
             </div>
 
@@ -51,7 +51,28 @@
 
 
         </div>
-        <div class=" bg-sky-400 rounded-tr-[15px] rounded-tl-[15px] border-2 border-black font-bold fixed bottom-0 left-0 right-0 p-4 text-center"> </div>
+
+        <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
+            <div class="flex justify-around items-center">
+                <a href="studentpage.php" class="flex flex-col items-center">
+                    <img src="./assets/homeButton.png" alt="home" class="rounded-full size-8">
+                    <span>Home</span>
+                </a>
+                <a href="activitypage.php" class="flex flex-col items-center">
+                    <img src="./assets/activityButton.png" alt="activities" class="rounded-full size-8">
+                    <span>Activity</span>
+                </a>
+                <a href="leaderboard.php" class="flex flex-col items-center">
+                    <img src="./assets/scoreButton.png" alt="scores" class="rounded-full size-8">
+                    <span>Scores</span>
+                </a>
+                <a href="settingpage.php" class="flex flex-col items-center">
+                    <img src="./assets/settingsButton.png" alt="settings" class="rounded-full size-8">
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+
 </body>
 
 </html>

@@ -14,15 +14,19 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
         <title>Document</title>
     </head>
 
-    <body class="bg-zinc-100 text-white font-sans">
-        <div class="flex flex-col h-screen">
-            <div class="p-4 bg-blue-900">
-                <!-- Profile Link -->
+    <body class="bg-cover bg-repeat bg-center text-black font-sans" style="background-image: url('./assets/background.png');">
+        <div class="flex flex-col">
+            <!-- Header -->
+            <div class="py-8 px-4 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black text-white">
                 <div class="flex items-center">
-                    <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full ml-3 size-10" />
+                    <div>
+                        <a href="manageprofile.php">
+                            <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full ml-3 size-16" />
+                        </a>
+                    </div>
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
-                        <p class="text-sm">22ft1414@student.pb.edu.bn</p>
+                        <p class="text-base">22ft1414@student.pb.edu.bn</p>
                     </div>
                     <div class="ml-auto">
                         <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
@@ -30,43 +34,73 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                 </div>
             </div>
 
-            <div class="bg-blue-600 mx-4 my-4 p-4 rounded-lg text-center">
-                <div class="flex justify-center items-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    <span class="text-3xl font-bold"><?php echo $_SESSION['point']; ?></span>
+            <div class="bg-sky-900 mx-4 my-4 py-2 px-4 rounded-[30px] text-white flex items-center justify-between">
+                <!-- Text and button container -->
+                <div class="pl-4">
+                    <!-- Text -->
+                    <span class="text-5xl font-bold shadow-lg"><?php echo $_SESSION['point']; ?> EP</span>
+                    <!-- Button -->
+                    <div class="mt-2">
+                        <a href="activitypage.php">
+                            <button class="bg-slate-300 hover:bg-sky-500 text-black px-4 py-1 rounded-full shadow-lg">Get More EP</button>
+                        </a>
+                    </div>
                 </div>
-                <a href="activitypage.php"><button class="bg-blue-800 text-white px-4 py-2 rounded-md">Get More Ep</button></a>
+                <!-- Image container -->
+                <div>
+                    <!-- Image -->
+                    <img src="./assets/studentpageEP.png" alt="EP box" class="size-44">
+                </div>
             </div>
 
             <div class="mx-4 my-2">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-black">Events</h2>
-                    <a href="activitypage.php"><button class="text-blue-300">View More</button></a>
+                    <h2 class="text-3xl font-bold text-black bg-white">Events</h2>
+                    <a href="activitypage.php"><button class="text-sky-600 bg-white pr-2">View More</button></a>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="./assets/EsportEvent.jpg" alt="Event 1" class="rounded-lg bg-cover h-48 w-64" />
-                    <img src="./assets/GoldenEvent.jpg" alt="Event 2" class="rounded-lg bg-cover h-48 w-64" />
+                    <img src="./assets/EsportEvent.jpg" alt="Event 1" class="rounded-[30px] bg-cover h-48 w-64 shadow-lg" />
+                    <img src="./assets/GoldenEvent.jpg" alt="Event 2" class="rounded-[30px] bg-cover h-48 w-64 shadow-lg" />
                 </div>
             </div>
 
             <div class="mx-4 my-6 mb-4">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-black">Clubs</h2>
-                    <a href="activitypage.php"><button class=" text-blue-300">View More</button></a>
+                    <h2 class="text-3xl font-bold text-black bg-white">Clubs</h2>
+                    <a href="activitypage.php"><button class=" text-sky-600 bg-white pr-2">View More</button></a>
                 </div>
-                <img src="./assets/handball.jpg" alt="Club Photo" class="rounded-lg" />
+                <div>
+                    <img src="./assets/handball.jpg" alt="Club Photo" class="rounded-[30px] shadow-lg" />
+                </div>
             </div>
 
-            <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
-                <div class="flex justify-around text-zinc-200">
-                    <span><a href="#">Home</a></span>
-                    <span><a href="activitypage.php">Activity</a></span>
-                    <span><a href="leaderboard.php">Scores</a></span>
-                    <span><a href="settingpage.php">Settings</a></span>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- Footer -->
+            <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
+                <div class="flex justify-around items-center">
+                    <a href="studentpage.php" class="flex flex-col items-center">
+                        <img src="./assets/homeSelectedButton.png" alt="home" class="rounded-full size-8">
+                        <span>Home</span>
+                    </a>
+                    <a href="activitypage.php" class="flex flex-col items-center">
+                        <img src="./assets/activityButton.png" alt="activities" class="rounded-full size-8">
+                        <span>Activity</span>
+                    </a>
+                    <a href="leaderboard.php" class="flex flex-col items-center">
+                        <img src="./assets/scoreButton.png" alt="scores" class="rounded-full size-8">
+                        <span>Scores</span>
+                    </a>
+                    <a href="settingpage.php" class="flex flex-col items-center">
+                        <img src="./assets/settingsButton.png" alt="settings" class="rounded-full size-8">
+                        <span>Settings</span>
+                    </a>
                 </div>
             </div>
+
         </div>
     </body>
 
