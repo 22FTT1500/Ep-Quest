@@ -11,7 +11,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+        <title>Home Page</title>
     </head>
 
     <body class="bg-cover bg-repeat bg-center text-black font-sans" style="background-image: url('./assets/background.png');">
