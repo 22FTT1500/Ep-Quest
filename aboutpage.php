@@ -11,11 +11,11 @@
 <body class="bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
 
     <div class="flex flex-col h-screen">
-        <div class="py-6 px-4 bg-sky-400 rounded-br-[15px] rounded-bl-[15px] border-2 border-black">
+        <div class="py-6 px-4 pb-6 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black">
             <!-- Profile Link -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
+                    <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-10" /></a>
                     <!-- add center title -->
                 </div>
                 <div class="justify-self-center ml-3 text-white text-xl">
