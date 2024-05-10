@@ -25,7 +25,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             <div class="p-4 bg-blue-900">
                 <!-- Profile Link -->
                 <div class="flex items-center">
-                    <img src="https://placehold.co/40x40" alt="profile" class="rounded-full ml-3" />
+                    <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full ml-3 size-10" />
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
                         <p class="text-sm">22ft1414@student.pb.edu.bn</p>
