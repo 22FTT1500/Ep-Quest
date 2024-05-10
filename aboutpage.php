@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body class="bg-white-100/50 bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
+<body class="bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
 
     <div class="flex flex-col h-screen">
         <div class="py-6 px-4 bg-sky-400 rounded-br-[15px] rounded-bl-[15px] border-2 border-black">

@@ -8,35 +8,39 @@
     <title>EP-QUEST</title>
 </head>
 
-<body class="bg-zinc-100 min-h-screen flex flex-col items-center justify-center p-4">
-    <div class="bg-zinc-100 p-4 rounded-lg w-full max-w-sm">
-        <div class="flex flex-col items-center">
-            <img src="assets/EpQuestLogo.png" alt="Logo" class="mb-2 size-44 logo">
-            <h1 class="text-xl font-bold mb-4">Ep-Quest</h1>
-        </div>
+<body class="bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
+    <div class="py-6 px-4 pb-32 bg-sky-400 rounded-br-[50px] rounded-bl-[50px] border-2 border-black flex flex-col items-center">
+
+        <img src="./assets/EpQuestLogo.png" alt="Logo" class="size-48 logo">
+
+        <h1 class="text-4xl font-serif font-bold">Ep-Quest</h1>
+
+    </div>
+    <div class="flex flex-col py-10 items-center justify-center">
         <form action="login.php" method="post" class="space-y-6">
             <?php if (isset($_GET['error'])) { ?>
                 <p class="text-red-500 text-center"><?php echo $_GET['error']; ?></p>
             <?php } ?>
-            <div class="relative">
-                <input type="text" name="stuid" placeholder="Student ID" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
+            <div class="relative w-80">
+                <input type="text" name="stuid" placeholder="Student ID" class="pl-10 pr-4 py-4 text-xl w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500 shadow-lg">
                 <span class="absolute left-3 top-2 text-zinc-500">
                     <!-- <img src="https://placehold.co/20x20" alt="Logo" class="mb-2"> -->
                 </span>
             </div>
             <div class="relative">
-                <input type="password" name="password" placeholder="Password" class="pl-10 pr-4 py-2 w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500">
+                <input type="password" name="password" placeholder="Password" class="pl-10 pr-4 py-4 text-xl w-full border rounded-full text-zinc-900 focus:outline-none focus:border-blue-500 shadow-lg">
                 <span class="absolute left-3 top-2 text-zinc-500">
                     <!-- <img src="https://placehold.co/20x20" alt="Logo" class="mb-2"> -->
                 </span>
             </div>
-
+            <br>
             <div class="flex justify-center">
-                <button type="submit" class="w-40 bg-blue-600 text-white py-2 rounded-full">Sign In</button>
+                <button type="submit" class="w-40 bg-sky-900 text-white text-xl font-bold p-2 rounded-full">Sign In</button>
             </div>
         </form>
 
     </div>
+
 </body>
 
 </html>
