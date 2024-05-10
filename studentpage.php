@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg']) && isset($_SESSION['point'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])) {
 ?>
 
     <!DOCTYPE html>
@@ -38,7 +38,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                 <!-- Text and button container -->
                 <div class="pl-4">
                     <!-- Text -->
-                    <span class="text-5xl font-bold shadow-lg"><?php echo $_SESSION['point']; ?> EP</span>
+                    <span class="text-5xl font-bold shadow-lg"><?php echo $_SESSION['total_ep_points']; ?> EP</span>
                     <!-- Button -->
                     <div class="mt-2">
                         <a href="activitypage.php">

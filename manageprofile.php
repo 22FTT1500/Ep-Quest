@@ -5,7 +5,7 @@ include 'db_conn.php';
 if (
     isset($_SESSION['student_id']) && isset($_SESSION['fullname'])
     && isset($_SESSION['email']) && isset($_SESSION['grpcode'])
-    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg']) && isset($_SESSION['point'])
+    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])
 ) {
 ?>
 
@@ -51,7 +51,7 @@ if (
                 <div class="border-2 border-black bg-white p-4 rounded-[20px] text-left flex items-center ml-4 mr-5">
                     <div>
                         <p class="text-base font-normal">Total Ep Points</p>
-                        <span class="text-5xl font-bold"><?php echo $_SESSION['point']; ?></span>
+                        <span class="text-5xl font-bold"><?php echo $_SESSION['total_ep_points']; ?></span>
                     </div>
                     <img src="./assets/token.png" alt="token" class="rounded-full size-20 ml-auto">
                 </div>
