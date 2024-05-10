@@ -28,7 +28,7 @@ if (isset($_POST['stuid']) && isset($_POST['password'])) {
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
-            if ($row['is_admin'] == 0) { // Check if user is admin
+            if ($row['is_admin'] == 1) { // Check if user is admin
                 $_SESSION['student_id'] = $row['student_id'];
                 $_SESSION['fullname'] = $row['fullname'];
                 $_SESSION['grpcode'] = $row['grpcode'];
