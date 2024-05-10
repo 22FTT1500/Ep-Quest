@@ -26,7 +26,7 @@
             z-index: -1;
         }
 
-        .logo-container {
+        /* .logo-container {
             position: absolute;
             top: 5vh;
             left: 50%;
@@ -36,7 +36,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
+        } */
 
         .logo-container img {
             position: relative;
@@ -90,6 +90,48 @@
         providing regular progress reports, and offering personalized study recommendations.
         The aim is to increase user engagement by at least 50% among registered users.
     </p>
+
+    <!-- Attendance Reg -->
+    <div class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-white shadow-md overflow-hidden w-96 border-black border-4 rounded-[20px]">
+            <!-- Blue background section -->
+            <div class="bg-sky-900 p-6 text-white">
+                <img src="./assets/correct.png" alt="green tick" class="w-32 h-32 mx-auto mb-4">
+                <h2 class="text-lg font-bold text-center">Thank you for joining!</h2>
+                <h1 class="text-3xl font-bold text-center">Something Club</h1>
+                <br>
+                <p class="text-base text-center">Sign In: 17 Oct 2023 / 03:30 PM</p>
+            </div>
+            <!-- White background section -->
+            <div class="bg-white p-6 flex items-center">
+                <a href="manageprofile.php">
+                    <img src="./assets/user1.jpg" alt="profile" class="rounded-full w-16 h-16 mr-3">
+                </a>
+                <div class="ml-3">
+                    <h2 class="font-bold">Bong Bong Marcus</h2>
+                    <p class="text-sm">22FTT1420</p>
+                    <p class="text-sm">PIPIN023</p>
+                </div>
+            </div>
+            <!-- "You earned 4 EP points" section -->
+            <div class="bg-white mx-4 py-1 px-2 border-2 border-sky-900 rounded-[30px] flex items-center justify-between"> <!-- Added justify-between -->
+                <div> <!-- Removed flex-grow -->
+                    <p class="text-sm font-semibold">You earned 4 EP points!</p>
+                </div>
+                <span class="bg-sky-900 text-white rounded-full px-2 py-1">+4</span> <!-- Moved +4 to the right -->
+            </div>
+
+            <!-- Button -->
+            <div class="px-6 py-4 my-2 flex flex-col items-center">
+                <a href="studentpage.php">
+                    <button class="rounded-full bg-sky-900 text-white text-base font-semibold py-1 px-4 shadow-md">Back To Home</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 
 </html>
