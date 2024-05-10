@@ -26,26 +26,26 @@ if (isset($_SESSION['student_id'])) {
         <title>Manage Club</title>
     </head>
 
-    <body class="bg-zinc-900 text-white font-sans">
+    <body class="bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
         <div class="flex flex-col h-screen">
-            <div class="p-4 bg-blue-900">
-                <!-- Profile Link -->
-                <div class="flex items-center justify-between">
+            <div class="py-6 px-4 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black">
+
+                <div class="flex items-center justify-between ">
                     <div class="flex items-center">
                         <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
-                        <!-- add center title -->
+
                     </div>
                     <div class="justify-self-center ml-3">
-                        <h1 class="font-bold">Manage Club</h1>
+                        <h1 class="font-bold text-xl">Manage Clubs</h1>
                     </div>
                     <div>
-                        <img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" />
+                        <a href="notificationpage.php"><img src="./assets/bell.png" alt="bell" class="rounded-full ml-3 size-7" /></a>
                     </div>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center mt-8">
-                <h2 class="text-2xl font-bold mb-4">List of Clubs</h2>
+            <div class="flex flex-col items-center mt-4">
+                <h2 class="text-2xl text-black font-bold mb-4 bg-white">List of Clubs</h2>
                 <div class="grid grid-rows-3 gap-4">
                     <?php
                     // Loop through the fetched clubs and display them
@@ -55,33 +55,54 @@ if (isset($_SESSION['student_id'])) {
                         $fullname = $row['fullname'];
                         $img_banner = $row['ImgBanner'];
                     ?>
-                        <div class="bg-white rounded-lg p-4">
-                            <div class="flex items-center">
+                        <div class="bg-white py-4 border-2 border-black rounded-lg relative">
+                            <div class="flex items-center px-8 pb-8">
                                 <!-- Display the club banner -->
-                                <img src="<?php echo $img_banner; ?>" alt="<?php echo $cca_name; ?>" class="w-40 h-40 object-cover mb-2">
-                                <div class="ml-4">
-                                    <h3 class="text-gray-500"><?php echo $cca_name; ?></h3>
-                                    <p class="text-gray-500">Joined by: <?php echo $fullname; ?></p>
-                                    <p class="text-gray-500">Date Joined: <?php echo $joining_date; ?></p>
-                                    <!-- You can add more details about the club here -->
+                                <div class="flex items-center"> <!-- Added flex-grow -->
+                                    <img src="<?php echo $img_banner; ?>" alt="<?php echo $cca_name; ?>" class="size-20 object-cover border-2 border-black rounded-lg">
+                                    <div class="ml-4">
+                                        <h3 class="text-gray-500 font-bold"><?php echo $cca_name; ?></h3>
+                                        <p class="text-gray-500">Joined by: <?php echo $fullname; ?></p>
+                                        <p class="text-gray-500">Date Joined: <?php echo $joining_date; ?></p>
+                                        <!-- You can add more details about the club here -->
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Assuming you want to view club details -->
-                            <a href="#" class="flex justify-end text-black font-bold py-2 px-4 mt-4">View Club</a>
+
+                            <!-- Position "View Club" link at bottom right -->
+                            <a href="#" class="absolute bottom-4 right-4 text-black font-bold inline-flex items-center"> <!-- clubpage.php requires respective clubID -->
+                                View Club
+                                <img src="./assets/right-arrow.png" alt="view" class="size-7 ml-1">
+                            </a>
                         </div>
+
                     <?php
                     }
                     ?>
                 </div>
 
-                <div class="p-4 bg-blue-900 fixed bottom-0 w-full">
-                    <div class="flex justify-around text-zinc-200">
-                        <span><a href="studentpage.php">Home</a></span>
-                        <span><a href="#">Activity</a></span>
-                        <span><a href="leaderboard.php">Scores</a></span>
-                        <span><a href="settingpage.php">Settings</a></span>
+                <!-- Footer -->
+                <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
+                    <div class="flex justify-around items-center">
+                        <a href="studentpage.php" class="flex flex-col items-center">
+                            <img src="./assets/homeButton.png" alt="home" class="rounded-full size-8">
+                            <span>Home</span>
+                        </a>
+                        <a href="activitypage.php" class="flex flex-col items-center">
+                            <img src="./assets/activityButton.png" alt="activities" class="rounded-full size-8">
+                            <span>Activity</span>
+                        </a>
+                        <a href="leaderboard.php" class="flex flex-col items-center">
+                            <img src="./assets/scoreButton.png" alt="scores" class="rounded-full size-8">
+                            <span>Scores</span>
+                        </a>
+                        <a href="settingpage.php" class="flex flex-col items-center">
+                            <img src="./assets/settingsButton.png" alt="settings" class="rounded-full size-8">
+                            <span>Settings</span>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </body>

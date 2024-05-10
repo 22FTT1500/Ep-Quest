@@ -10,7 +10,7 @@
 
 <body class="bg-cover bg-repeat bg-center text-white font-sans" style="background-image: url('./assets/background.png');">
     <div class="flex flex-col h-screen">
-        <div class="py-6 px-4 bg-sky-400 rounded-br-[15px] rounded-bl-[15px] border-2 border-black">
+        <div class="py-6 px-4 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black">
 
             <div class="flex items-center justify-between ">
                 <div class="flex items-center">
@@ -102,6 +102,7 @@
         });
     </script>
 
+    <!-- Footer -->
     <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
         <div class="flex justify-around items-center">
             <a href="studentpage.php" class="flex flex-col items-center">
