@@ -84,9 +84,26 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     </div>
                 </div>
 
+                <!-- Session Sign-in Form Popup -->
+                <div id="sessionForm" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md join-form">
+                        <h2 class="text-lg font-bold mb-4">Session Sign-in</h2>
+                        <form id="sessionSignInForm" action="attendance_signin.php" method="POST">
+                            <input type="hidden" id="studentID" name="studentID" value="<?php echo $_SESSION['student_id']; ?>">
+                            <input type="hidden" id="clubID" name="clubID" value="<?php echo $club_id; ?>">
+                            <input type="text" id="sessionCode" name="sessionCode" placeholder="Session Code" required><br>
+                            <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
                 <script>
                     document.getElementById("joinButton").addEventListener("click", function() {
                         document.getElementById("joinForm").classList.remove("hidden");
+                    });
+
+                    document.getElementById("sessionButton").addEventListener("click", function() {
+                        document.getElementById("sessionForm").classList.remove("hidden");
                     });
 
                     document.getElementById("joinClubForm").addEventListener("submit", function(event) {
@@ -110,6 +127,11 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                             .catch(error => {
                                 console.error("Error:", error);
                             });
+                    });
+
+                    document.getElementById("sessionSignInForm").addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        this.submit();
                     });
                 </script>
 
