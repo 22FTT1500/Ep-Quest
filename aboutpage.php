@@ -18,7 +18,7 @@
                     <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
                     <!-- add center title -->
                 </div>
-                <div class="justify-self-center ml-3 text-white text-lg">
+                <div class="justify-self-center ml-3 text-white text-xl">
                     <h1 class="font-bold">About Us</h1>
                 </div>
                 <div>
