@@ -1,7 +1,22 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])) {
+
+// Check if the session variables are set
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg'])) {
+    // Fetch the latest total_ep_points from the database
+    $student_id = $_SESSION['student_id'];
+    $query = "SELECT total_ep_points FROM student_details WHERE student_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $student_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    // Update the session variable with the latest total_ep_points
+    if ($row) {
+        $_SESSION['total_ep_points'] = $row['total_ep_points'];
+    }
 ?>
 
     <!DOCTYPE html>
@@ -36,6 +51,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
 
             <div class="bg-sky-900 mx-4 my-4 py-2 px-4 rounded-[30px] text-white flex items-center justify-between">
                 <!-- Text and button container -->
+
                 <div class="pl-4">
                     <!-- Text -->
                     <span class="text-5xl font-bold shadow-lg"><?php echo $_SESSION['total_ep_points']; ?> EP</span>
