@@ -5,7 +5,7 @@ include 'db_conn.php';
 if (
     isset($_SESSION['student_id']) && isset($_SESSION['fullname'])
     && isset($_SESSION['email']) && isset($_SESSION['grpcode'])
-    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg'])
+    && isset($_SESSION['contactno']) && isset($_SESSION['course']) && isset($_SESSION['profileimg']) && isset($_SESSION['point'])
 ) {
 ?>
 
@@ -42,7 +42,7 @@ if (
                 <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full" />
             </div>
 
-
+            <p class="text-lg font-bold">Total Ep Points: <?php echo $_SESSION['point']; ?></p>
             <p class="text-lg font-bold">Student ID: <?php echo $_SESSION['student_id']; ?></p>
             <p class="text-lg font-bold">Full Name: <?php echo $_SESSION['fullname']; ?></p>
             <p class="text-lg font-bold">Student Email: <?php echo $_SESSION['email']; ?></p>
