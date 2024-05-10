@@ -2,9 +2,9 @@
 session_start();
 include 'db_conn.php';
 
-if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])) {
     // Retrieve user data ordered by EP points
-    $sql = "SELECT stid, fullname, student_id, profileimg, point FROM student_details ORDER BY point DESC";
+    $sql = "SELECT stid, fullname, student_id, profileimg, total_ep_points FROM student_details ORDER BY total_ep_points DESC";
 
     $result = mysqli_query($conn, $sql);
 
@@ -53,7 +53,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                                 <p class="text-xs text-zinc-500"><?php echo $row['student_id']; ?></p>
                             </div>
                         </div>
-                        <span class="font-semibold text-zinc-500"><?php echo $row['point']; ?></span>
+                        <span class="font-semibold text-zinc-500"><?php echo $row['total_ep_points']; ?></span>
                     </div>
                 <?php
                 }
