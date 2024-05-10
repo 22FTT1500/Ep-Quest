@@ -46,11 +46,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
             <!-- Footer -->
             <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
                 <div class="flex justify-around items-center">
-
-                    <a href="settingpage.php" class="flex flex-col items-center">
-                        <img src="./assets/settingsSelectedButton.png" alt="settings" class="rounded-full size-8">
-                        <span>Settings</span>
-                    </a>
+                    <!-- Add footer content here -->
                 </div>
             </div>
 
