@@ -12,41 +12,46 @@
         <div class="flex flex-col h-screen text-black">
 
             <div class="flex justify-between items-center py-8 px-4 bg-sky-400 rounded-br-[30px] rounded-bl-[30px] border-2 border-black">
-
                 <a href="settingpage.php"><img src="./assets/left-arrow.png" alt="back" class="rounded-full ml-3 size-7" /></a>
-
                 <h1 class="text-xl font-bold text-white">Ep Records</h1>
-
                 <a href="notificationpage.php"><img src="./assets/bell.png" alt="bell" class="rounded-full ml-3 size-7" /></a>
-
             </div>
 
             <div class="flex flex-col gap-4 py-6 px-4">
-                <div class="bg-white p-6 rounded-[30px] shadow-lg mb-4 border-2 border-black">
-                    <div class="flex justify-center mb-4" style="border-bottom: 2px solid black;">
-                        <img src="https://placehold.co/300x150" alt="Handball Image" style="object-fit: cover; width: 100%; height: 100%;">
-                    </div>
-                    <div class="flex flex-col gap-2 text-lg">
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Club: <span class="font-normal text-right">Handball</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Attendance: <span class="font-normal text-right">Attend ✔</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Sign In: <span class="font-normal text-right">9:50 AM</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Date: <span class="font-normal text-right">26 Oct 2023</span></p>
-                        <p class="font-bold flex justify-between">Ep Gained: <span class="font-normal text-right">+4</span></p>
-                    </div>
-                </div>
+                <?php
+                session_start();
+                include 'db_conn.php'; // Include your database connection file
 
-                <div class="bg-white p-4 rounded-[30px] shadow-lg mb-4 border-2 border-black">
-                    <div class="flex justify-center mb-4" style="border-bottom: 2px solid black;">
-                        <img src="https://placehold.co/300x150" alt="Esport Event Image" style="object-fit: cover; width: 100%; height: 100%;">
-                    </div>
-                    <div class="flex flex-col gap-2 text-lg">
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Event: <span class="font-normal text-right">Esport Event</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Attendance: <span class="font-normal text-right">Attend ✔</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Sign In: <span class="font-normal text-right">9:50 AM</span></p>
-                        <p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Date: <span class="font-normal text-right">26 Oct 2023</span></p>
-                        <p class="font-bold flex justify-between">Ep Gained: <span class="font-normal text-right">+5</span></p>
-                    </div>
-                </div>
+                // Fetch all data from student_attendance table
+                $sql = "SELECT * FROM student_attendance";
+                $result = $conn->query($sql);
+
+                // Check if there are any records
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        // Output HTML to display the data
+                        echo '<div class="bg-white p-5 rounded-[30px] shadow-lg mb-4 border-2 border-black">';
+                        echo '<div class="flex justify-center mb-4" style="border-bottom: 2px solid black;">';
+                        echo '<img src="' . $row['img_banner'] . '" alt="Club Image" style="object-fit: cover; width: 100%; height: 100%;">';
+                        echo '</div>';
+                        echo '<div class="flex flex-col gap-2 text-lg">';
+                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Club: <span class="font-normal text-right">' . $row['name'] . '</span></p>';
+                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Attendance: <span class="font-normal text-right">' . $row['attendance_status'] . '</span></p>';
+                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Sign In: <span class="font-normal text-right">' . $row['sign_in_date'] . '</span></p>';
+                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Date: <span class="font-normal text-right">' . $row['sign_in_date'] . '</span></p>';
+                        echo '<p class="font-bold flex justify-between">Ep Gained: <span class="font-normal text-right">+' . $row['club_point'] . '</span></p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    // If no records found
+                    echo "No records found";
+                }
+
+                // Close the database connection
+                $conn->close();
+                ?>
             </div>
 
         </div>
@@ -78,7 +83,6 @@
                 </a>
             </div>
         </div>
-
 </body>
 
 </html>

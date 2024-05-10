@@ -38,6 +38,7 @@ if (isset($_POST['stuid']) && isset($_POST['password'])) {
                 $_SESSION['course'] = $row['course'];
                 $_SESSION['profileimg'] = $row['profileimg'];
                 $_SESSION['point'] = $row['point'];
+                $_SESSION['total_ep_points'] = $row['total_ep_points'];
 
                 header('Location: studentpage.php');
                 exit();
