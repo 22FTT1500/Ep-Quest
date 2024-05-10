@@ -53,7 +53,15 @@
                 $conn->close();
                 ?>
             </div>
+
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <div class="p-4 bg-sky-400 fixed bottom-0 w-full font-bold text-lg rounded-tr-[20px] rounded-tl-[20px] border-2 border-black text-white">
             <div class="flex justify-around items-center">
