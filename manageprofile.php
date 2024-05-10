@@ -45,7 +45,22 @@ if (
                     <div class="mb-2 size-32">
                         <img src="<?php echo $_SESSION['profileimg']; ?>" alt="profile" class="rounded-full" />
                     </div>
-                    <button class=" items-center border-2 border-black rounded-full bg-white py-1 w-32 text-center">Edit Profile</button>
+                    <!-- Inside the HTML body -->
+                    <button onclick="openEditProfileModal()" class="border-2 border-black rounded-full bg-white py-1 w-32 text-center">Edit Profile</button>
+                </div>
+
+                <!-- Edit Profile Modal -->
+                <div id="editProfileModal" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h2 class="text-lg font-semibold mb-4">Edit Profile</h2>
+                        <form id="editProfileForm" action="edit_profile.php" method="POST" enctype="multipart/form-data">
+                            <!-- Profile Image -->
+                            <input type="file" name="profile_img" class="block w-full border-gray-300 rounded-md mb-2">
+                            <!-- Submit Button -->
+                            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-full">Submit</button>
+                            <button type="button" onclick="closeEditProfileModal()" class="bg-red-500 text-white px-4 py-2 rounded-full ml-2">Cancel</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="border-2 border-black bg-white p-4 rounded-[20px] text-left flex items-center ml-4 mr-5">
@@ -123,6 +138,17 @@ if (
     </body>
 
     </html>
+
+    <!-- JavaScript to handle modal -->
+    <script>
+        function openEditProfileModal() {
+            document.getElementById('editProfileModal').classList.remove('hidden');
+        }
+
+        function closeEditProfileModal() {
+            document.getElementById('editProfileModal').classList.add('hidden');
+        }
+    </script>
 
 <?php
 } else {

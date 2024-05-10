@@ -4,7 +4,8 @@ include 'db_conn.php';
 
 if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])) {
     // Retrieve user data ordered by EP points
-    $sql = "SELECT stid, fullname, student_id, profileimg, total_ep_points FROM student_details ORDER BY total_ep_points DESC";
+    $sql = "SELECT stid, fullname, student_id, profileimg, total_ep_points FROM student_details WHERE is_admin = 0 ORDER BY total_ep_points DESC";
+
 
     $result = mysqli_query($conn, $sql);
 
