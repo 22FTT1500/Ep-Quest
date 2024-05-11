@@ -13,7 +13,7 @@
 
         <img src="./assets/EpQuestLogo.png" alt="Logo" class="size-48 logo">
 
-        <h1 class="text-4xl font-serif font-bold">Ep-Quest</h1>
+        <h1 class="text-4xl font-bold">Ep-Quest</h1>
 
     </div>
     <div class="flex flex-col py-10 items-center justify-center">

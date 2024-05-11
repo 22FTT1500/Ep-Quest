@@ -23,7 +23,6 @@
                 include 'db_conn.php'; // Include your database connection file
 
                 // Fetch data from student_attendance table and join with clubs table to get club names
-                // Fetch data from student_attendance table and join with clubs table to get club names
                 $sql = "SELECT sa.*, c.ClubName AS club_name FROM student_attendance sa JOIN clubs c ON sa.club_id = c.ClubID";
 
                 $result = $conn->query($sql);
