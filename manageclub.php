@@ -8,11 +8,12 @@ if (isset($_SESSION['student_id'])) {
     $student_id = $_SESSION['student_id'];
 
     // Fetch the clubs joined by the student from the student_cca table along with the club names and banners
-    $sql = "SELECT ccca.cca_name, ccca.joining_date, std.fullname, clb.ImgBanner 
-            FROM student_cca AS ccca 
-            INNER JOIN student_details AS std ON ccca.student_id = std.student_id 
-            INNER JOIN clubs AS clb ON ccca.cca_name = clb.ClubName
-            WHERE ccca.student_id = '$student_id'";
+    $sql = "SELECT ccca.cca_name, ccca.joining_date, std.fullname, clb.ImgBanner, clb.ClubID
+        FROM student_cca AS ccca 
+        INNER JOIN student_details AS std ON ccca.student_id = std.student_id 
+        INNER JOIN clubs AS clb ON ccca.cca_name = clb.ClubName
+        WHERE ccca.student_id = '$student_id'";
+
     $result = mysqli_query($conn, $sql);
 ?>
 
@@ -70,10 +71,11 @@ if (isset($_SESSION['student_id'])) {
                             </div>
 
                             <!-- Position "View Club" link at bottom right -->
-                            <a href="#" class="absolute bottom-4 right-4 text-black font-bold inline-flex items-center"> <!-- clubpage.php requires respective clubID -->
+                            <a href="clubpage.php?ClubID=<?php echo $row['ClubID']; ?>" class="absolute bottom-4 right-4 text-black font-bold inline-flex items-center">
                                 View Club
                                 <img src="./assets/right-arrow.png" alt="view" class="size-7 ml-1">
                             </a>
+
                         </div>
 
                     <?php
