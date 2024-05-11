@@ -2,7 +2,7 @@
 session_start();
 include 'db_conn.php';
 
-if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SESSION['profileimg']) && isset($_SESSION['total_ep_points']) && isset($_SESSION['email'])) {
     // Retrieve user data ordered by EP points
     $sql = "SELECT stid, fullname, student_id, profileimg, total_ep_points FROM student_details WHERE is_admin = 0 ORDER BY total_ep_points DESC";
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     </div>
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
-                        <p class="text-base">22ft1414@student.pb.edu.bn</p>
+                        <p class="text-base"><?php echo $_SESSION['email']; ?></p>
                     </div>
                     <div class="ml-auto">
                         <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
-if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg'])) {
+if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_SESSION['profileimg'])  && isset($_SESSION['email'])) {
 ?>
 
     <!DOCTYPE html>
@@ -26,7 +26,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['student_id']) && isset($_
                     </div>
                     <div class="ml-3">
                         <h1 class="font-bold"><?php echo $_SESSION['fullname']; ?></h1>
-                        <p class="text-base">22ft1414@student.pb.edu.bn</p>
+                        <p class="text-base"><?php echo $_SESSION['email']; ?></p>
                     </div>
                     <div class="ml-auto">
                         <a href="notificationpage.php"><img src="./assets/bell.png" alt="profile" class="rounded-full ml-3 size-7" /></a>
