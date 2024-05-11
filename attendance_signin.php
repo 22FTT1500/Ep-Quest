@@ -11,7 +11,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             $session_code = $_POST['sessionCode'];
 
             // Fetch the img_banner and club_point from the clubs table
-            $club_query = "SELECT ImgBanner, ClubPoint FROM clubs WHERE ClubID = ?";
+            $club_query = "SELECT ImgBanner, ClubPoint, ClubName FROM clubs WHERE ClubID = ?";
             $club_stmt = $conn->prepare($club_query);
             $club_stmt->bind_param("s", $club_id);
             $club_stmt->execute();
@@ -19,6 +19,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
             $club_row = $club_result->fetch_assoc();
             $img_banner = $club_row['ImgBanner'];
             $club_point = $club_row['ClubPoint'];
+            $club_name = $club_row['ClubName'];
 
             // Insert attendance record into the database
             $insert_sql = "INSERT INTO student_attendance (student_id, name, club_id, attendance_status, sign_in_date, img_banner, club_point) VALUES (?, ?, ?, ?, NOW(), ?, ?)";
@@ -43,6 +44,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                     $_SESSION['club_id'] = $club_id;
                     $_SESSION['sign_in_date'] = date('Y-m-d H:i:s'); // Assuming current date and time
                     $_SESSION['club_point'] = $club_point;
+                    $_SESSION['ClubName'] = $club_name;
 
                     // Redirect to attendance_success.php
                     header("Location: attendance_success.php");
