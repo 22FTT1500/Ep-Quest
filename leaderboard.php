@@ -6,7 +6,6 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
     // Retrieve user data ordered by EP points
     $sql = "SELECT stid, fullname, student_id, profileimg, total_ep_points FROM student_details WHERE is_admin = 0 ORDER BY total_ep_points DESC";
 
-
     $result = mysqli_query($conn, $sql);
 
 ?>
@@ -45,15 +44,17 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
 
             <div class="m-4">
                 <?php
+                $rank = 1; // Initialize rank counter
                 // Loop through the result set and display each user
                 while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <div class="mb-4">
                         <div class="flex items-center justify-between bg-zinc-200 px-4 py-4 rounded-[30px] my-2 shadow-lg">
                             <div class="flex items-center">
+                                <!-- Display the rank -->
+                                <span class="text-xl font-bold mr-2 text-zinc-500"><?php echo $rank; ?></span>
 
-                                <span class="text-xl font-bold mr-2 text-zinc-500"><?php echo $row['stid']; ?></span>
-
+                                <!-- Display user details -->
                                 <img src="<?php echo $row['profileimg']; ?>" class="rounded-full size-12" crossorigin="anonymous">
 
                                 <div class="ml-2">
@@ -66,6 +67,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                         </div>
                     </div>
                 <?php
+                    $rank++; // Increment rank counter
                 }
                 ?>
             </div>
