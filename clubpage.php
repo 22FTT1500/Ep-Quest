@@ -118,7 +118,7 @@ if (isset($_SESSION['student_id']) && isset($_SESSION['fullname']) && isset($_SE
                             <form id="sessionSignInForm" action="attendance_signin.php" method="POST" class="flex flex-col items-center">
                                 <input type="hidden" id="studentID" name="studentID" value="<?php echo $_SESSION['student_id']; ?>">
                                 <input type="hidden" id="clubID" name="clubID" value="<?php echo $club_id; ?>">
-                                <input type="text" id="sessionCode" name="sessionCode" placeholder="4HR9023" class="border-2 border-sky-800 rounded-full py-2 px-8 mb-4" disabled required>
+                                <input type="text" id="sessionCode" name="sessionCode" placeholder="4HR9023" class="border-2 border-sky-800 rounded-full py-2 px-8 mb-4" required>
                                 <button type="submit" class="bg-sky-500 hover:bg-sky-900 text-white rounded-full px-8 py-2 shadow-lg">Submit</button>
                             </form>
                         </div>

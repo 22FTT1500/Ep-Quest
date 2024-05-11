@@ -17,13 +17,15 @@
                 <a href="notificationpage.php"><img src="./assets/bell.png" alt="bell" class="rounded-full ml-3 size-7" /></a>
             </div>
 
-            <div class="flex flex-col gap-4 py-6 px-4">
+            <div class="flex flex-col gap-3 py-6 px-4 mb-4">
                 <?php
                 session_start();
                 include 'db_conn.php'; // Include your database connection file
 
-                // Fetch all data from student_attendance table
-                $sql = "SELECT * FROM student_attendance";
+                // Fetch data from student_attendance table and join with clubs table to get club names
+                // Fetch data from student_attendance table and join with clubs table to get club names
+                $sql = "SELECT sa.*, c.ClubName AS club_name FROM student_attendance sa JOIN clubs c ON sa.club_id = c.ClubID";
+
                 $result = $conn->query($sql);
 
                 // Check if there are any records
@@ -36,7 +38,7 @@
                         echo '<img src="' . $row['img_banner'] . '" alt="Club Image" style="object-fit: cover; width: 100%; height: 100%;">';
                         echo '</div>';
                         echo '<div class="flex flex-col gap-2 text-lg">';
-                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Club: <span class="font-normal text-right">' . $row['name'] . '</span></p>';
+                        echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Club: <span class="font-normal text-right">' . $row['club_name'] . '</span></p>';
                         echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Attendance: <span class="font-normal text-right">' . $row['attendance_status'] . '</span></p>';
                         echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Sign In: <span class="font-normal text-right">' . $row['sign_in_date'] . '</span></p>';
                         echo '<p class="font-bold flex justify-between" style="border-bottom: 1px solid black;">Date: <span class="font-normal text-right">' . $row['sign_in_date'] . '</span></p>';
@@ -52,6 +54,7 @@
                 // Close the database connection
                 $conn->close();
                 ?>
+
             </div>
 
         </div>
@@ -83,6 +86,7 @@
                 </a>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
